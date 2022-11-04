@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wildfire Reporting API Docs</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="wildfirereports">WildfireReports</h1>
+<p>Simple Django API to manage wildfire reports for follow up by emergency authorities.</p>
+<p>Wildfire Report JSON Definition:</p>
+<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+       <span class="token string">"town"</span><span class="token punctuation">:</span> <span class="token string">"Burlington"</span><span class="token punctuation">,</span>
+       <span class="token string">"reported_by"</span><span class="token punctuation">:</span> <span class="token string">"John Doe"</span><span class="token punctuation">,</span>
+       <span class="token string">"contact_number"</span><span class="token punctuation">:</span> <span class="token string">"(555)-867-5309"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Endpoints:<br>
+/API/WildfireReport/<a>str:id</a>/</p>
+<p>GET:</p>
+<ul>
+<li>Accepts optional id paramenter</li>
+<li>Without the id parameter, returns all wildfire reports in JSON</li>
+<li>If an id is specified, returns the specific id or an error message in JSON eg. {“message”: “Wildfire with id: 24 not found!”}</li>
+</ul>
+<p>POST</p>
+<ul>
+<li>Accepts optional id parameter but requires JSON in the body to define a new report or update an existing one</li>
+<li>Without the id parameter, accepts a report definition in JSON (see above)</li>
+<li>If an id is passed, updates existing report with report JSON sent in request</li>
+</ul>
+<p>DELETE</p>
+<ul>
+<li>Requires the id parameter</li>
+<li>Deletes the report with the matching id</li>
+<li>If report with specified id is not found, returns an error in JSON eg. {“message”: “Report with id: 25 not found!”}</li>
+</ul>
+</div>
+</body>
+
+</html>

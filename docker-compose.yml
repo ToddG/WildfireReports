@@ -1,0 +1,25 @@
+version: '3'  
+services:
+  web:
+    build: .
+    container_name: django_01
+    command: bash -c "gunicorn wildfire_tracker.wsgi -b 0.0.0.0:8000"
+    volumes:
+      - ./app:/src
+      - ./app/static:/static
+    expose:
+      - "8000"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_01
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/src      
+      - ./app/static:/static
+      - ./config/nginx:/etc/nginx/conf.d
+    depends_on:
+      - web
+    links:
+      - web:web
