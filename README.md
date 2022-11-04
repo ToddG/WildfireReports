@@ -2,11 +2,14 @@
  Simple Django API to manage wildfire reports for follow up by emergency authorities.
  
  Wildfire Report JSON Definition:
+ ```json
  {
         "town": "Burlington",
         "reported_by": "John Doe",
         "contact_number": "(555)-867-5309"
  }
+ ```
+
  
  Endpoints:
  /API/WildfireReport/<str:id>/
