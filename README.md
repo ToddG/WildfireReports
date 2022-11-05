@@ -1,17 +1,18 @@
 # WildfireReports
- Simple Django API to manage wildfire reports for follow up by emergency authorities.
- 
- Wildfire Report JSON Definition:
- ```json
- {
-        "town": "Burlington",
-        "reported_by": "John Doe",
-        "contact_number": "(555)-867-5309"
- }
- ```
+ Simple Django API to manage wildfire reports for follow up by emergency authorities. 
 
  
- Endpoints:
+ ## Getting Started
+ Clone the repository and run: 
+ ```
+ docker-compose up --build 
+ ```
+
+ ## Architecture
+ App is served by Django with Nginx as proxy, see Docker Compose
+ 
+ 
+ ## Endpoints:
  /API/WildfireReport/<str:id>/
  
  GET:
@@ -28,3 +29,12 @@
   - Requires the id parameter
   - Deletes the report with the matching id
   - If report with specified id is not found, returns an error in JSON eg. {"message": "Report with id: 25 not found!"}
+
+ Wildfire Report JSON Definition:
+ ```json
+ {
+        "town": "Burlington",
+        "reported_by": "John Doe",
+        "contact_number": "(555)-867-5309"
+ }
+ ```
