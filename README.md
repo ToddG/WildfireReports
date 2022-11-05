@@ -7,7 +7,12 @@
  ```
  docker-compose up --build 
  ```
-
+ 
+ To run unit tests use: 
+ ```
+ python3 manage.py test  
+ ```
+ 
  ## Architecture
  App is served by Django with Nginx as proxy, see Docker Compose
  
