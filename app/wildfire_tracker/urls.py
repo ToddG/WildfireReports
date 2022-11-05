@@ -18,8 +18,8 @@ from django.urls import path
 from api.views import WildfireReportView, Index
 
 urlpatterns = [
-    path('', Index.as_view()),
+    path('', Index.as_view(), name='index'),
     path('admin/', admin.site.urls),
-    path('API/WildfireReport/', WildfireReportView.as_view()),
-    path('API/WildfireReport/<str:pk>/', WildfireReportView.as_view()),
+    path('API/WildfireReport/', WildfireReportView.as_view(), name="WildfireReport"),
+    path('API/WildfireReport/<str:pk>/', WildfireReportView.as_view(), name="WildfireReportParams"),
 ]

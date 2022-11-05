@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-vnqs=ptv1$(7#a2xunwdtp%ab6m2x=ye9#rz-m^58a(ztu%4ay
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CORS_ORIGIN_WHITELIST = ["*"]
+# CORS_ORIGIN_WHITELIST = ["*"]
 CSRF_TRUSTED_ORIGINS = [
     'http://0.0.0.0',
     'http://localhost',
