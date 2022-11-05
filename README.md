@@ -3,7 +3,7 @@
 
  
  ## Getting Started
- Clone the repository and run: 
+ Comes with a pre-populated SQLite db with some wildfires and a Django admin (username:admin, password:supersecret). Just clone the repository and run: 
  ```
  docker-compose up --build 
  ```
