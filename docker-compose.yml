@@ -14,7 +14,7 @@ services:
     image: nginx:latest
     container_name: nginx_01
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
       - ./app:/src      
       - ./app/static:/static
